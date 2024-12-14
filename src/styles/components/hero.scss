@@ -1,0 +1,166 @@
+@import "../media";
+
+.hero {
+  position: relative;
+  background: url("../../assets/img/hero-bg.jpg") no-repeat 50% 50% / cover;
+
+  @include desktop {
+    background: url("../../assets/img/hero-bg-lg.jpg") no-repeat 50% 50% / cover;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    @include tablet {
+      height: auto;
+    }
+  }
+
+  &__content {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    max-width: 320px;
+
+    @include mobile {
+      max-width: 500px;
+    }
+
+    @include tablet {
+      max-width: 740px;
+    }
+
+    @include desktop {
+      max-width: 970px;
+    }
+  }
+
+  &__description {
+    display: none;
+    color: var(--medium-grey);
+    margin: 30px 0 60px;
+
+    @include mobile {
+      display: block;
+      max-width: 450px;
+    }
+
+    @include tablet {
+      max-width: 800px;
+      margin: 40px 0 57px;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 40px;
+
+    @include mobile {
+      margin-top: 0;
+      width: fit-content;
+    }
+  }
+
+  &__btn-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+
+    @include tablet {
+      flex-wrap: nowrap;
+      margin-top: 0;
+      gap: 24px;
+    }
+
+    @include desktop {
+      gap: 40px;
+    }
+  }
+
+  .section {
+    &__circle {
+      position: absolute;
+      left: 50%;
+      bottom: -50px;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      z-index: 100;
+      transition: var(--animation);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 140px;
+        height: 140px;
+        bottom: -70px;
+      }
+
+      @include tablet {
+        bottom: 80px;
+      }
+
+      @include desktop {
+        width: 181px;
+        height: 181px;
+        bottom: 120px;
+        transform: none;
+        right: calc((100vw - 1265px) / 2);
+        left: auto;
+      }
+    }
+  }
+
+  .stamp {
+    animation: rotate-animation 5s linear infinite;
+  }
+
+  .stamp-arr {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    animation: bounce-animation 2s linear infinite;
+
+    @include mobile {
+      width: 26px;
+      height: 36px;
+    }
+
+    @include desktop {
+      width: 47px;
+      height: 47px;
+    }
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-animation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  75% {
+    transform: translateY(-20px);
+  }
+}

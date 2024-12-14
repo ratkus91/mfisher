@@ -1,0 +1,288 @@
+.footer {
+  position: relative;
+  background-color: var(--dark-black);
+  color: var(--white);
+  overflow: hidden;
+  padding: 40px 0;
+
+  @include tablet {
+    padding: 60px 0;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../assets/img/footer-fish.svg) no-repeat 100% 100% / contain;
+    width: 524px;
+    height: 472px;
+    top: -143px;
+    left: 0;
+    opacity: 0.2;
+    transform: rotate(-90deg);
+
+    @include desktop {
+      top: -88px;
+      left: -28px;
+      opacity: 0.2;
+      transform: none;
+    }
+  }
+
+  @include desktop {
+    padding: 65px 0 141px;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 2;
+
+    @include tablet {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    @include desktop {
+      padding-right: 48px;
+    }
+  }
+
+  &__text,
+  &__menu,
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+
+    @include desktop {
+      width: auto;
+    }
+
+    //&:not(:first-child) {
+    //  li:first-child {
+    //    color: var(--grey);
+    //    margin-bottom: 10px;
+    //  }
+    //}
+  }
+
+  &__menu,
+  &__social,
+  &__contacts {
+    @include tablet {
+      width: fit-content;
+    }
+
+    li:first-child {
+      @include tablet {
+        color: var(--grey);
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__menu {
+    margin-bottom: 60px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 14px;
+    margin-bottom: 60px;
+
+    @include tablet {
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    @include desktop {
+      max-width: 419px;
+      margin-top: 93px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text-description {
+    color: var(--grey);
+  }
+
+  &__contacts {
+    order: 3;
+
+    .icon {
+      color: var(--grey);
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    .icon-copy {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    @include tablet {
+      order: 4;
+    }
+  }
+
+  &__btn {
+    order: 5;
+
+    &.footer {
+      &__btn-desk {
+        display: none;
+
+        @include tablet {
+          display: flex;
+
+          .margin-bottom {
+            margin-top: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  &__contacts-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    a.p-2 {
+      text-decoration: underline;
+    }
+
+    .p-2 {
+      margin: 0 16px;
+    }
+
+    &:last-child {
+      @include tablet {
+        margin-top: 28px;
+      }
+    }
+  }
+
+  &__menu li {
+    line-height: 1;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+    order: 4;
+    margin: 60px 0;
+
+    @include tablet {
+      flex-direction: column;
+      order: 3;
+      align-items: flex-start;
+    }
+
+    @include tablet {
+      margin: 0;
+    }
+
+    li:first-child {
+      display: none;
+      color: var(--grey);
+
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__social-item {
+    &:first-child {
+      display: none;
+    }
+  }
+
+  &__social-icon {
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--grey);
+    transition: color ease-in-out 0.4s;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__social-link {
+    &:hover {
+      .footer__social-icon {
+        color: var(--main-purple);
+      }
+    }
+  }
+
+  &__social-text {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  .footer__btn.footer__btn-mob {
+    display: flex;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.footer-bottom {
+  background-color: #1a1a1a;
+  padding: 16px 0;
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14px;
+    flex-direction: column-reverse;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    span {
+      color: var(--white);
+
+      @include media-custom(767px) {
+        display: inline-block;
+      }
+    }
+
+    a {
+      color: #828282;
+
+      @include media-custom(767px) {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.icon-copy,
+.message-copy {
+  cursor: pointer;
+}
