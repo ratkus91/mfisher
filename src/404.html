@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M Fisher Design Agency | 404</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Unbounded:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.scss" />
+    <link rel="stylesheet" href="styles/pages/index.scss" />
+    <style>
+      body {
+        overflow: hidden;
+      }
+
+      .e-page {
+        position: relative;
+        background: url("./assets/img/404/bg.jpg") no-repeat 50% 50% / cover;
+        min-height: 100vh;
+      }
+
+      .e-page::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: url("./assets/img/404/bg-img.svg") no-repeat 50% 50% / contain;
+        z-index: 2;
+        width: 621px;
+        height: 554px;
+      }
+
+      .e-page__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        height: 100vh;
+        color: #fff;
+        font-family: "Unbounded", sans-serif;
+        z-index: 5;
+      }
+
+      .e-page__title {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 400;
+        font-size: 100px;
+        white-space: nowrap;
+      }
+
+      .e-page__description {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 200;
+        font-size: 22px;
+      }
+
+      .e-page__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+      }
+
+      #content > .footer,
+      #content > .footer-bottom {
+        display: none;
+      }
+
+      @media (min-width: 393px) {
+        .e-page__title {
+          font-size: 120px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .e-page__title {
+          --b-size: 660px;
+          --b-speed: 2s;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: var(--b-size);
+          height: var(--b-size);
+        }
+
+        .ball {
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          justify-content: center;
+          transform-origin: center top;
+          padding: 20px;
+        }
+
+        .ball::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 220px;
+          border-radius: 50%;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          background-color: rgba(0, 0, 0, 0.2);
+          display: flex;
+          flex-shrink: 0;
+        }
+
+        .ball:first-child {
+          animation: swing-left var(--b-speed) linear infinite;
+        }
+
+        .ball:last-child {
+          animation: swing-right var(--b-speed) linear infinite;
+        }
+
+        .e-page__footer {
+          transform: translateY(-80%);
+        }
+
+        @keyframes swing-left {
+          0% {
+            transform: rotate(0deg);
+            animation-timing-function: ease-out;
+          }
+
+          25% {
+            transform: rotate(50deg);
+            animation-timing-function: ease-in;
+          }
+
+          50% {
+            transform: rotate(0deg);
+            animation-timing-function: linear;
+          }
+        }
+
+        @keyframes swing-right {
+          0% {
+            transform: rotate(0deg);
+            animation-timing-function: linear;
+          }
+
+          50% {
+            transform: rotate(0deg);
+            animation-timing-function: ease-out;
+          }
+
+          75% {
+            transform: rotate(-50deg);
+            animation-timing-function: ease-in;
+          }
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .e-page__title {
+          font-size: 160px;
+        }
+
+        .e-page__description {
+          font-size: 40px;
+        }
+
+        .e-page::before {
+          width: 825px;
+          height: 736px;
+        }
+      }
+    </style>
+  </head>
+  <body id="content">
+    <load src="../src/components/header.html" />
+    <main>
+      <section class="e-page">
+        <div class="container">
+          <div class="e-page__content">
+            <div class="e-page__title">
+              <span class="ball ball__left">4</span>
+              <span class="ball ball__center">0</span>
+              <span class="ball ball__right">4</span>
+            </div>
+            <div class="e-page__footer">
+              <div class="e-page__description">Oops.. Page not found.</div>
+              <a class="btn btn_primary" href="./index.html">
+                <span class="btn__text">Go the home page</span>
+                <span class="btn__icon icon-arrow-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <load src="./components/footer.html" />
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

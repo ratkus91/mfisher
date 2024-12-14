@@ -1,0 +1,170 @@
+@import "media";
+@import "vars";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h5,
+blockquote {
+  font-family: var(--second-family), sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.41;
+  font-weight: 500;
+
+  @include mobile {
+    font-size: 42px;
+    line-height: 1.43;
+  }
+
+  @include tablet {
+    font-size: 63px;
+    line-height: 1.24;
+  }
+
+  @include desktop {
+    font-size: 84px;
+    line-height: 1.26;
+    font-weight: 700;
+  }
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.43;
+  font-weight: 500;
+
+  @include mobile {
+    font-size: 36px;
+    line-height: 1.44;
+  }
+
+  @include tablet {
+    font-size: 44px;
+    line-height: 1.18;
+  }
+
+  @include desktop {
+    font-size: 60px;
+    line-height: 74px;
+    font-weight: 600;
+  }
+}
+
+h3,
+blockquote {
+  font-size: 24px;
+  line-height: 1.67;
+  font-weight: 500;
+
+  @include mobile {
+    font-size: 28px;
+    line-height: 1.64;
+  }
+
+  @include tablet {
+    font-size: 38px;
+    line-height: 1.63;
+  }
+
+  @include desktop {
+    font-size: 55px;
+    line-height: 1.49;
+  }
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 500;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 1.75;
+  }
+
+  @include tablet {
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  @include desktop {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 17px;
+  line-height: 24px;
+
+  @include mobile {
+    line-height: 1.44;
+  }
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  @include desktop {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.p-1 {
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: 500;
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 1.78;
+  }
+}
+
+.p-2 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 1.62;
+  }
+}
+
+.p-3 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.p-4 {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.btn {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+
+  @include mobile {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

@@ -1,0 +1,134 @@
+@import "../media";
+@import "../form";
+
+.contacts {
+  padding-top: 90px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 575px;
+    width: 100%;
+
+    @include desktop {
+      padding: 90px 85px 90px 0;
+    }
+
+    .social__icon {
+      color: currentColor;
+    }
+  }
+
+  &__content-form {
+    position: relative;
+    //max-width: 685px;
+    width: 100%;
+    background-color: var(--light-grey);
+    padding: 30px 0;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 24px;
+      background-color: var(--light-grey);
+      z-index: -1;
+    }
+
+    &::before {
+      left: -24px;
+    }
+
+    &::after {
+      right: -24px;
+    }
+
+    @include tablet {
+      padding: 40px 24px;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    @include desktop {
+      padding: 60px 90px;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    a {
+      text-decoration: underline;
+      margin: 0 10px;
+    }
+  }
+
+  .icon-sms,
+  .icon-call,
+  .icon-copy {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .icon-sms,
+  .icon-call {
+    color: var(--medium-grey);
+  }
+
+  .icon-copy {
+    color: var(--main-purple);
+  }
+
+  .btn_meeting {
+    display: none;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  .input-field .icon {
+    color: var(--dark-black);
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+.map {
+  img {
+    width: 100%;
+  }
+}

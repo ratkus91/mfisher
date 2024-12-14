@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Unbounded:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.scss" />
+    <link rel="stylesheet" href="./styles/pages/contact-us.scss" />
+  </head>
+  <body id="content">
+    <load src="./components/header.html" />
+    <main>
+      <section class="contacts">
+        <div class="container">
+          <div class="contacts__content">
+            <div class="contacts__content-text">
+              <h2 class="contacts__title">
+                Let’s <span class="text-color">Talk!</span> Tell&nbsp;us&nbsp;about your project.
+              </h2>
+              <ul class="contacts__list">
+                <li class="contacts__item">
+                  <span class="icon-sms icon"></span>
+                  <a id="email-address" class="p-1" href="mailto:hello@mfisher.agency">hello@mfisher.agency</a>
+                  <span id="email-copy" class="icon-copy icon_primary" onclick="copyEmail()"></span>
+                </li>
+                <li class="contacts__item">
+                  <span class="icon icon-call"></span>
+                  <a id="phone-number" class="p-1" href="tel:+123455677">+ 1 234 55 677</a>
+                  <span id="phone-copy" class="icon-copy icon_primary" onclick="copyPhoneNumber()"></span>
+                </li>
+              </ul>
+              <a href="#" class="btn btn_primary-green btn_meeting">
+                <span class="btn__icon icon-calendar"> </span>
+                <span class="btn__text">Schedule a Meeting</span>
+              </a>
+
+              <ul class="social__list">
+                <li class="social__item">
+                  <a href="https://dribbble.com" class="social__link">
+                    <span class="social__icon icon-dribbble"></span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="https://behance.com" class="social__link">
+                    <span class="social__icon icon-behance"></span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="https://facebook.com" class="social__link">
+                    <span class="social__icon icon-facebook"></span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="https://linkedin.com" class="social__link">
+                    <span class="social__icon icon-linkedin"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="contacts__content-form">
+              <h5>Send us a message</h5>
+              <form id="order-form" name="order-form" class="form order-form" novalidate autocomplete="off">
+                <div class="input-field">
+                  <div class="input-field-box">
+                    <input
+                      class="form-input validate"
+                      name="user-name"
+                      type="text"
+                      id="user-name"
+                      placeholder="Your Name*"
+                      pattern="^[a-zA-Zа-яА-ЯЁё \-]+$"
+                      data-error-message="Invalid format"
+                      aria-describedby="name-error"
+                      required
+                    />
+                    <span class="icon-user-tag icon"></span>
+                  </div>
+                  <span class="p-4 form__error name-error" id="user-name-error" aria-live="polite"> </span>
+                </div>
+
+                <div class="input-field">
+                  <div class="input-field-box">
+                    <input
+                      class="form-input validate"
+                      name="user-email"
+                      type="email"
+                      id="user-email"
+                      placeholder="Email*"
+                      data-error-message="Invalid E-mail"
+                      aria-describedby="email-error"
+                      required
+                    />
+                    <span class="icon-sms icon"></span>
+                  </div>
+                  <span class="p-4 form__error email-error" id="user-email-error" aria-live="polite"></span>
+                </div>
+
+                <div class="input-field">
+                  <div class="input-field-box">
+                    <input
+                      class="form-input validate"
+                      name="user-phone"
+                      type="text"
+                      id="user-phone"
+                      data-error-message="Invalid format"
+                      aria-describedby="phone-error"
+                    />
+                  </div>
+                  <span class="p-4 form__error phone-error" id="user-phone-error" aria-live="polite"></span>
+                </div>
+
+                <div class="input-field">
+                  <textarea
+                    class="user-comment validate"
+                    name="user-comment"
+                    rows="4"
+                    minlength="50"
+                    id="user-comment"
+                    placeholder="Describe your industry and IT project*"
+                    data-error-message="min 50 characters"
+                    required
+                  ></textarea>
+                  <div class="counter" id="char-counter">0/50</div>
+                  <span class="p-4 form__error comment-error" id="user-comment-error" aria-live="polite"></span>
+                </div>
+                <div class="input-field">
+                  <label for="budget">Project budget:</label>
+                  <div class="budget-container" id="budget">
+                    <div class="budget-option p-2 selected" data-value="not-sure">Not Sure</div>
+                    <div class="budget-option p-2" data-value="<5k">&lt;$5K</div>
+                    <div class="budget-option p-2" data-value="5k-15k">$5K-$15K</div>
+                    <div class="budget-option p-2" data-value="15k-25k">$15K-$25</div>
+                    <div class="budget-option p-2" data-value=">30k">&gt;$30K</div>
+                  </div>
+                </div>
+
+                <ul id="file-list" class="file__list"></ul>
+
+                <div class="check-box">
+                  <div class="accept-box">
+                    <input
+                      class="input-nda visually-hidden"
+                      type="checkbox"
+                      id="user-nda"
+                      name="user-nda"
+                      value="true"
+                    />
+                    <label class="label-accept" for="user-nda">
+                      <span class="label-accept-span icon icon-accept"> </span>
+                      <span class="p-2">I want to protect my data by signing an NDA.</span>
+                    </label>
+                  </div>
+                  <span class="icon-info"></span>
+                </div>
+
+                <span class="p-4 form__empty-error" id="empty-error" aria-live="assertive"></span>
+
+                <div class="form__footer">
+                  <div class="form__footer-action">
+                    <button class="btn_submit btn btn_primary" type="submit">
+                      <span class="btn__text">Send Request</span>
+                      <span class="btn__icon icon-arrow-right"> </span>
+                    </button>
+                    <label for="file-upload" class="btn_attach btn btn_secondary-black">
+                      <span class="btn__icon">
+                        <span class="icon-attach"></span>
+                      </span>
+                      <span class="btn__text">Attach File</span>
+                    </label>
+                    <input type="file" id="file-upload" name="files" style="display: none" multiple />
+                  </div>
+                  <span class="p-4"
+                    >*No more than 3 files may be attached up to 30 MB each. Formats doc, docx, pdf, ppt, pptx,xlsx
+                    .</span
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="map">
+      <div class="container-fluid">
+        <picture>
+          <source media="(min-width: 1280px)" srcset="./assets/img/map/map-desk.jpg" />
+          <source media="(min-width: 768px)" srcset="./assets/img/map/map-tablet.jpg" />
+          <source media="(min-width: 320px)" srcset="./assets/img/map/map-mob.jpg" />
+          <img src="./assets/img/map/map.jpg" alt="map" />
+        </picture>
+      </div>
+    </section>
+    <load src="./components/popup-mini.html" />
+    <load src="./components/footer.html" />
+
+    <script type="module" src="js/main.js"></script>
+
+    <script type="module">
+      import intlTelInput from "intl-tel-input";
+      import emailjs from "@emailjs/browser";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector(".order-form");
+        const budgetOptions = document.querySelectorAll(".budget-option");
+        const errorContainer = document.getElementById("empty-error");
+        const fileInput = document.getElementById("file-upload");
+        const fileList = document.getElementById("file-list");
+
+        const uploadedFiles = new Set();
+
+        const validateEmail = (email) => {
+          const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailRegex.test(email)) return false;
+
+          const domain = email.split("@")[1];
+          const domainParts = domain.split(".");
+          if (domainParts.length < 2) return false;
+
+          const tld = domainParts[domainParts.length - 1];
+          return tld.length >= 2;
+        };
+
+        const validateField = (field) => {
+          const errorSpan = document.querySelector(`#${field.id}-error`);
+          if (field.type === "email") {
+            if (!validateEmail(field.value)) {
+              errorSpan.textContent = "Invalid E-mail";
+              return false;
+            }
+          } else if (!field.checkValidity()) {
+            const errorMessage = field.getAttribute("data-error-message") || "Invalid field.";
+            errorSpan.textContent = errorMessage;
+            return false;
+          } else {
+            errorSpan.textContent = "";
+          }
+          return true;
+        };
+
+        const textarea = document.getElementById("user-comment");
+        const counter = document.getElementById("char-counter");
+        const maxLength = parseInt(textarea.getAttribute("minlength"), 10);
+
+        const updateCounter = () => {
+          const inputValue = textarea.value;
+          const validChars = inputValue.split("");
+          const validLength = validChars.length;
+
+          counter.textContent = `${validLength}/${maxLength}`;
+          if (validLength > maxLength) {
+            counter.classList.add("error");
+          } else {
+            counter.classList.remove("error");
+          }
+        };
+
+        textarea.addEventListener("input", updateCounter);
+
+        const validateFiles = () => {
+          const files = fileInput.files;
+          const allowedExtensions = ["doc", "docx", "pdf", "ppt", "pptx", "xlsx"];
+          const maxFileSize = 30 * 1024 * 1024; // 30MB
+          const maxFiles = 3;
+
+          if (!errorContainer) return false;
+
+          let newFilesCount = 0;
+
+          for (let file of files) {
+            const extension = file.name.split(".").pop().toLowerCase();
+
+            if (uploadedFiles.has(file.name)) {
+              errorContainer.textContent = `File ${file.name} is already added.`;
+              continue;
+            }
+
+            if (!allowedExtensions.includes(extension)) {
+              errorContainer.textContent = `Unsupported file format: ${file.name}`;
+              return false;
+            }
+
+            if (file.size > maxFileSize) {
+              errorContainer.textContent = `File ${file.name} exceeds the 30MB size limit.`;
+              return false;
+            }
+
+            if (uploadedFiles.size >= maxFiles) {
+              errorContainer.textContent = `You can attach up to ${maxFiles} files.`;
+              return false;
+            }
+
+            const listItem = document.createElement("li");
+            listItem.classList.add("file__item");
+
+            const fileName = document.createElement("span");
+            fileName.textContent = file.name;
+
+            const deleteButton = document.createElement("button");
+            deleteButton.innerHTML = '<span class="icon icon-close"></span>';
+            deleteButton.classList.add("btn-del");
+            deleteButton.addEventListener("click", () => {
+              listItem.remove();
+              uploadedFiles.delete(file.name);
+              errorContainer.textContent = "";
+              newFilesCount--;
+            });
+
+            listItem.appendChild(fileName);
+            listItem.appendChild(deleteButton);
+            fileList.appendChild(listItem);
+            uploadedFiles.add(file.name);
+            newFilesCount++;
+          }
+
+          errorContainer.textContent = "";
+          return true;
+        };
+
+        const validateForm = () => {
+          let isValid = true;
+          const fields = form.querySelectorAll(".validate");
+
+          fields.forEach((field) => {
+            if (field.id && !validateField(field)) {
+              isValid = false;
+              field.classList.add("field-error");
+            } else {
+              field.classList.remove("field-error");
+            }
+          });
+
+          if (!validateFiles()) {
+            isValid = false;
+          }
+
+          return isValid;
+        };
+
+        const handleBudgetSelection = (event) => {
+          budgetOptions.forEach((option) => option.classList.remove("selected"));
+          event.target.classList.add("selected");
+        };
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          if (validateForm()) {
+            errorContainer.textContent = "";
+            const formData = new FormData(form);
+
+            emailjs.init("lLSKvVcx1LQ3lQ7Qy");
+
+            const data = {
+              user_name: formData.get("user-name"),
+              user_email: formData.get("user-email"),
+              user_phone: formData.get("user-phone"),
+              user_comment: formData.get("user-comment"),
+              project_budget:
+                document.querySelector(".budget-option.selected")?.getAttribute("data-value") || "Not specified",
+              user_nda: formData.get("user-nda") ? "Yes" : "No",
+            };
+
+            emailjs
+              .send("service_d3x1f1d", "template_9nakrge", data)
+              .then(() => {
+                const popup = document.getElementById("popup-mini");
+                popup.classList.remove("hide");
+                popup.classList.add("is-open");
+
+                popup.querySelector(".popup-mini__close-btn").addEventListener("click", () => {
+                  popup.classList.remove("is-open");
+                  popup.classList.add("hide");
+                });
+                form.reset();
+                fileList.innerHTML = "";
+                budgetOptions.forEach((option) => option.classList.remove("selected"));
+                uploadedFiles.clear();
+              })
+              .catch((error) => {
+                console.error("Error submitting form:", error);
+                alert("There was an error submitting the form.");
+              });
+          } else {
+            errorContainer.textContent = "Please fix the errors above before submitting.";
+          }
+        });
+
+        budgetOptions.forEach((option) => {
+          option.addEventListener("click", handleBudgetSelection);
+        });
+        fileInput.addEventListener("change", validateFiles);
+      });
+    </script>
+  </body>
+</html>

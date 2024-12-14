@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M Fisher Design Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Unbounded:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.scss" />
+    <link rel="stylesheet" href="styles/pages/index.scss" />
+  </head>
+  <body id="content">
+    <load src="../src/components/header.html" highlight-home="is-active" />
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__content">
+            <h1 class="hero__title">Transforming <span class="text-color">Ideas</span> into reality</h1>
+            <p class="hero__description p-1">
+              Welcome to a place where creativity meets innovation. Our expert team is dedicated to crafting compelling
+              websites, enhancing your brand, and creating impactful solutions to elevate your business.
+            </p>
+            <button class="btn btn_primary hero__btn">
+              <span class="btn__text">Let’s Discuss Your Project</span>
+              <span class="btn__icon icon-arrow-right"></span>
+            </button>
+          </div>
+          <a href="#services" class="section__circle">
+            <img class="stamp" src="./assets/img/stamp_btn.svg" alt="icon" />
+            <img class="stamp-arr" src="./assets/img/stamp-arr.svg" alt="icon" />
+          </a>
+        </div>
+      </section>
+
+      <section class="principles section">
+        <div class="container">
+          <div class="principles__content">
+            <h2 class="section__title principles__title">
+              Our
+              <mark>guiding</mark>
+              principles
+            </h2>
+            <ul class="principles__list">
+              <li class="principles__item">
+                <img src="./assets/img/principles/icon-1.svg" alt="icon" />
+                <div class="principles__item-text">
+                  <h5 class="principles__item-title">Transparency</h5>
+                  <p class="principles__item-description p-2">Clear and open communication throughout every project.</p>
+                </div>
+              </li>
+              <li class="principles__item">
+                <img src="./assets/img/principles/icon-2.svg" alt="icon" />
+                <div class="principles__item-text">
+                  <h5 class="principles__item-title">Customer First</h5>
+                  <p class="principles__item-description p-2">
+                    Tailoring our approach to align perfectly with your objectives and aspirations.
+                  </p>
+                </div>
+              </li>
+              <li class="principles__item">
+                <img src="./assets/img/principles/icon-3.svg" alt="icon" />
+                <div class="principles__item-text">
+                  <h5 class="principles__item-title">High Quality</h5>
+                  <p class="principles__item-description p-2">Delivering top-notch design that exceeds expectations.</p>
+                </div>
+              </li>
+              <li class="principles__item">
+                <img src="./assets/img/principles/icon-4.svg" alt="icon" />
+                <div class="principles__item-text">
+                  <h5 class="principles__item-title">Efficient Delivery</h5>
+                  <p class="principles__item-description p-2">
+                    Ensuring projects are completed on time without compromising quality.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="bg-section">
+        <section id="services" class="services section">
+          <div class="container">
+            <div class="services__content">
+              <h2 class="services__title">Providing visual <span class="text-color">services</span></h2>
+              <div class="accordion">
+                <div class="accordion__item">
+                  <button class="accordion__header" aria-expanded="false">
+                    <span class="accordion__number h5">01.</span>
+                    <span class="accordion__title h5">Web Design</span>
+                    <span class="accordion__icon"><img src="./assets/icons/arrow-down.svg" alt="icon" /></span>
+                  </button>
+                  <div class="accordion__wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__image">
+                        <img
+                          srcset="./assets/img/services/img-2.jpg 1x, ./assets/img/services/img-2@2x.jpg 2x"
+                          src="./assets/img/services/img-2.jpg"
+                          alt="Web Design"
+                        />
+                      </div>
+                      <div class="accordion__content-box">
+                        <h4 class="accordion__content-title">Web Design</h4>
+                        <p class="accordion__content-text p-2">
+                          We blend creativity and technology to create visually striking, user-friendly websites in
+                          different domains. We offer custom designs, intuitive UX/UI, and responsive layouts for all
+                          devices tailored to meet your business needs.
+                        </p>
+                        <ul class="tag__list">
+                          <li class="tag__item p-3">CRM systems</li>
+                          <li class="tag__item p-3">eCommerce</li>
+                          <li class="tag__item p-3">Corporate websites</li>
+                          <li class="tag__item p-3">Dashboards</li>
+                        </ul>
+                        <div class="accordion__footer">
+                          <ul class="accordion__price">
+                            <li class="accordion__price-label">From</li>
+                            <li class="accordion__price-value">
+                              <h5>$500</h5>
+                            </li>
+                          </ul>
+                          <div class="elem-action">
+                            <button class="btn btn_secondary accordion__btn">
+                              <span class="btn__text">Let’s Talk</span>
+                              <span class="btn__icon icon-arrow-right"> </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion__item">
+                  <button class="accordion__header" aria-expanded="false">
+                    <span class="accordion__number h5">02.</span>
+                    <span class="accordion__title h5">Mobile App Design</span>
+                    <span class="accordion__icon"> <img src="./assets/icons/arrow-down.svg" alt="icon" /></span>
+                  </button>
+                  <div class="accordion__wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__image">
+                        <img
+                          srcset="./assets/img/services/img-3.jpg 1x, ./assets/img/services/img-3@2x.jpg 2x"
+                          src="./assets/img/services/img-3.jpg"
+                          alt="Mobile App Design"
+                        />
+                      </div>
+                      <div class="accordion__content-box">
+                        <h4 class="accordion__content-title">Mobile App Design</h4>
+                        <p class="accordion__content-text p-2">
+                          We focus on creating seamless, engaging, and functional mobile applications tailored to your
+                          specific needs. From concept to launch, we ensure every aspect of the app is polished,
+                          user-friendly, and optimized for performance.
+                        </p>
+                        <ul class="tag__list">
+                          <li class="tag__item p-3">iOS</li>
+                          <li class="tag__item p-3">Android</li>
+                          <li class="tag__item p-3">Cross-platform</li>
+                          <li class="tag__item p-3">Fintech</li>
+                          <li class="tag__item p-3">Healthcare</li>
+                        </ul>
+                        <div class="accordion__footer">
+                          <ul class="accordion__price">
+                            <li class="accordion__price-label">From</li>
+                            <li class="accordion__price-value">
+                              <h5>$1000</h5>
+                            </li>
+                          </ul>
+                          <div class="elem-action">
+                            <button class="btn btn_secondary accordion__btn">
+                              <span class="btn__text">Let’s Talk</span>
+                              <span class="btn__icon icon-arrow-right"> </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion__item">
+                  <button class="accordion__header" aria-expanded="false">
+                    <span class="accordion__number h5">03.</span>
+                    <span class="accordion__title h5">UI/UX Audit & Redesign</span>
+                    <span class="accordion__icon"><img src="./assets/icons/arrow-down.svg" alt="icon" /></span>
+                  </button>
+                  <div class="accordion__wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__image">
+                        <img
+                          srcset="./assets/img/services/img-4.jpg 1x, ./assets/img/services/img-4@2x.jpg 2x"
+                          src="./assets/img/services/img-4.jpg"
+                          alt="UI/UX Design Audit"
+                        />
+                      </div>
+                      <div class="accordion__content-box">
+                        <h4 class="accordion__content-title">UI/UX Audit & Redesign</h4>
+                        <p class="accordion__content-text p-2">
+                          Get an in-depth analysis of your user interface and experience. We pinpoint areas for
+                          improvement, streamline navigation, and provide actionable recommendations to boost user
+                          satisfaction.
+                        </p>
+                        <ul class="tag__list">
+                          <li class="tag__item p-3">User experience</li>
+                          <li class="tag__item p-3">Usability</li>
+                          <li class="tag__item p-3">High conversion</li>
+                          <li class="tag__item p-3">Design Optimization</li>
+                          <li class="tag__item p-3">UX Audit</li>
+                        </ul>
+                        <div class="accordion__footer">
+                          <ul class="accordion__price">
+                            <li class="accordion__price-label">From</li>
+                            <li class="accordion__price-value">
+                              <h5>$500</h5>
+                            </li>
+                          </ul>
+                          <div class="elem-action">
+                            <button class="btn btn_secondary accordion__btn">
+                              <span class="btn__text">Let’s Talk</span>
+                              <span class="btn__icon btn__icon-arrow">
+                                <span class="icon-arrow-right"></span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion__item">
+                  <button class="accordion__header" aria-expanded="false">
+                    <span class="accordion__number h5">04.</span>
+                    <span class="accordion__title h5">Markup Development</span>
+                    <span class="accordion__icon"><img src="./assets/icons/arrow-down.svg" alt="icon" /></span>
+                  </button>
+                  <div class="accordion__wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__image">
+                        <img
+                          srcset="./assets/img/services/img-5.jpg 1x, ./assets/img/services/img-5@2x.jpg 2x"
+                          src="./assets/img/services/img-5.jpg"
+                          alt="Markup Development"
+                        />
+                      </div>
+                      <div class="accordion__content-box">
+                        <h4 class="accordion__content-title">Markup Development</h4>
+                        <p class="accordion__content-text p-2">
+                          We ensure your websites are built with clean, efficient, and standards-compliant HTML/CSS/JS.
+                          We focus on creating lightweight, SEO-friendly code that renders perfectly across all browsers
+                          and devices.
+                        </p>
+                        <ul class="tag__list">
+                          <li class="tag__item p-3">Responsive</li>
+                          <li class="tag__item p-3">HTML</li>
+                          <li class="tag__item p-3">CSS</li>
+                          <li class="tag__item p-3">JS</li>
+                          <li class="tag__item p-3">Pixel-Perfect</li>
+                          <li class="tag__item p-3">Cross-Browser Compatibility</li>
+                        </ul>
+                        <div class="accordion__footer">
+                          <ul class="accordion__price">
+                            <li class="accordion__price-label">Per Hour</li>
+                            <li class="accordion__price-value">
+                              <h5>$30</h5>
+                            </li>
+                          </ul>
+                          <div class="elem-action">
+                            <button class="btn btn_secondary accordion__btn">
+                              <span class="btn__text">Let’s Talk</span>
+                              <span class="btn__icon btn__icon-arrow">
+                                <span class="icon-arrow-right"></span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion__item">
+                  <button class="accordion__header" aria-expanded="false">
+                    <span class="accordion__number h5">05.</span>
+                    <span class="accordion__title h5">CMS Development</span>
+                    <span class="accordion__icon"><img src="./assets/icons/arrow-down.svg" alt="icon" /></span>
+                  </button>
+                  <div class="accordion__wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__image">
+                        <img
+                          srcset="./assets/img/services/img-6.jpg 1x, ./assets/img/services/img-6@2x.jpg 2x"
+                          src="./assets/img/services/img-6.jpg"
+                          alt="CMS Development"
+                        />
+                      </div>
+                      <div class="accordion__content-box">
+                        <h4 class="accordion__content-title">CMS Development</h4>
+                        <p class="accordion__content-text p-2">
+                          We build secure, and user-friendly platforms tailored to your needs. Using WordPress, Drupal,
+                          Joomla or custom solutions, we deliver responsive, SEO-optimized websites for easy management
+                          and top performance.
+                        </p>
+                        <ul class="tag__list">
+                          <li class="tag__item p-3">WordPress</li>
+                          <li class="tag__item p-3">Drupal</li>
+                          <li class="tag__item p-3">Magento</li>
+                          <li class="tag__item p-3">Shopify</li>
+                          <li class="tag__item p-3">Plugin Development</li>
+                          <li class="tag__item p-3">Maintenance</li>
+                        </ul>
+                        <div class="accordion__footer">
+                          <ul class="accordion__price">
+                            <li class="accordion__price-label">From</li>
+                            <li class="accordion__price-value">
+                              <h5>$2000</h5>
+                            </li>
+                          </ul>
+                          <div class="elem-action">
+                            <button class="btn btn_secondary accordion__btn">
+                              <span class="btn__text">Let’s Talk</span>
+                              <span class="btn__icon btn__icon-arrow">
+                                <span class="icon-arrow-right"></span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion__item">
+                  <button class="accordion__header" aria-expanded="false">
+                    <span class="accordion__number h5">06.</span>
+                    <span class="accordion__title h5">Outstaff</span>
+                    <span class="accordion__icon">
+                      <img src="./assets/icons/arrow-down.svg" alt="icon" />
+                    </span>
+                  </button>
+                  <div class="accordion__wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__image">
+                        <img
+                          srcset="./assets/img/services/img-7.jpg 1x, ./assets/img/services/img-7@2x.jpg 2x"
+                          src="./assets/img/services/img-7.jpg"
+                          alt="Outstaff"
+                        />
+                      </div>
+                      <div class="accordion__content-box">
+                        <h4 class="accordion__content-title">Outstaff</h4>
+                        <p class="accordion__content-text p-2">
+                          Extend your team with our skilled professionals. Our experts integrate seamlessly into your
+                          processes, upholding your company's standards and boosting your creative capacity without the
+                          overhead of full-time hires.
+                        </p>
+                        <ul class="tag__list">
+                          <li class="tag__item p-3">On-Demand Talent</li>
+                          <li class="tag__item p-3">Remote</li>
+                          <li class="tag__item p-3">Flexible Staffing</li>
+                          <li class="tag__item p-3">Cost Efficiency</li>
+                          <li class="tag__item p-3">Adaptability</li>
+                        </ul>
+                        <div class="accordion__footer">
+                          <ul class="accordion__price">
+                            <li class="accordion__price-label">From</li>
+                            <li class="accordion__price-value">
+                              <h5>$20</h5>
+                            </li>
+                          </ul>
+                          <div class="elem-action">
+                            <button class="btn btn_secondary accordion__btn">
+                              <span class="btn__text">Let’s Talk</span>
+                              <span class="btn__icon btn__icon-arrow">
+                                <span class="icon-arrow-right"></span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="elem-action">
+                <a href="services.html" class="btn btn_primary">
+                  <span class="btn__text">Browse All Services</span>
+                  <span class="btn__icon btn__icon-arrow">
+                    <span class="icon-arrow-right"></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="cases section">
+          <div class="container">
+            <div class="cases__content">
+              <h2 class="cases__title">Showcasing our <span class="text-color">expertise</span></h2>
+              <ul class="cases__list">
+                <li class="cases__item">
+                  <div class="cases__item-img">
+                    <picture>
+                      <source
+                        srcset="./assets/img/portfolio/p-d-1@2x.jpg 2x, ./assets/img/portfolio/p-d-1.jpg 1x"
+                        media="(min-width: 1280px)"
+                      />
+                      <source
+                        srcset="./assets/img/portfolio/p-t-1@2x.jpg 2x, ./assets/img/portfolio/p-t-1.jpg 1x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./assets/img/portfolio/p-t-1@2x.jpg 2x, ./assets/img/portfolio/p-t-1.jpg 1x"
+                        media="(max-width: 767px)"
+                      />
+                      <img src="./assets/img/portfolio/p-t-1.jpg" alt="project" />
+                    </picture>
+                    <div class="cases__item-info">
+                      <h5 class="cases__item-name">Sanodoc</h5>
+                      <ul class="tag__list">
+                        <li class="tag__item p-3">80 hours</li>
+                        <li class="tag__item p-3">Healthcare</li>
+                        <li class="tag__item p-3">CRM</li>
+                        <li class="tag__item p-3">Mobile App</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="cases__item-content">
+                    <div class="cases__item-header">
+                      <h5 class="cases__item-title">Sanodoc</h5>
+                    </div>
+                    <ul class="cases__item-body">
+                      <li class="p-2">
+                        The Israel Broadcast TV app provides live and on-demand access to top Israeli channels,
+                        available on mobile, TV, and web platforms.The Israel Broadcast TV app provides live and
+                        on-demand access to top Israe
+                      </li>
+
+                      <li class="p-2">
+                        li channels, available on mobile, TV, and web platforms.The Israel Broadcast TV app provides
+                        live and on-demand access to top Israeli channels, available on mobile, TV, and web platforms.
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="cases__item">
+                  <div class="cases__item-img">
+                    <picture>
+                      <source
+                        srcset="./assets/img/portfolio/p-d-2@2x.jpg 2x, ./assets/img/portfolio/p-d-2.jpg 1x"
+                        media="(min-width: 1280px)"
+                      />
+                      <source
+                        srcset="./assets/img/portfolio/p-t-2@2x.jpg 2x, ./assets/img/portfolio/p-t-2.jpg 1x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./assets/img/portfolio/p-t-2@2x.jpg 2x, ./assets/img/portfolio/p-t-2.jpg 1x"
+                        media="(max-width: 767px)"
+                      />
+                      <img src="./assets/img/portfolio/p-t-2.jpg" alt="project" />
+                    </picture>
+                    <div class="cases__item-info">
+                      <h5 class="cases__item-name">Tenex</h5>
+                      <ul class="tag__list">
+                        <li class="tag__item p-3">3+ months</li>
+                        <li class="tag__item p-3">CRM</li>
+                        <li class="tag__item p-3">Mobile App</li>
+                        <li class="tag__item p-3">Web Design</li>
+                        <li class="tag__item p-3">Redesign</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="cases__item-content">
+                    <div class="cases__item-header">
+                      <h5 class="cases__item-title">Tenex</h5>
+                    </div>
+                    <ul class="cases__item-body">
+                      <li class="p-2">
+                        We developed a comprehensive solution for Tenex, encompassing a mobile application, CRM
+                        platform, and website tailored to streamline real estate and hospitality operations.
+                      </li>
+                      <li class="p-2">
+                        The system includes distinct roles for users and property owners, offering tools for property
+                        management, tenant engagement, facility oversight, and real estate accounting.
+                      </li>
+                      <li class="p-2">
+                        customization while maintaining a modern, user-friendly interface. Delivered with a focus on
+                        functionality and scalability, this project reflects our commitment to creating professional
+                        solutions tailored to industry-specific needs.
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="cases__item">
+                  <div class="cases__item-text">
+                    <img src="./assets/img/portfolio/logo/logo-3.svg" alt="logo" />
+                    <p class="p-1">
+                      The Israel Broadcast TV app provides live and on-demand access to top Israeli channels, available
+                      on mobile, TV, and web platforms.
+                    </p>
+                  </div>
+                  <div class="cases__item-img">
+                    <picture>
+                      <source
+                        srcset="./assets/img/portfolio/p-d-3@2x.jpg 2x, ./assets/img/portfolio/p-d-3.jpg 1x"
+                        media="(min-width: 1280px)"
+                      />
+                      <source
+                        srcset="./assets/img/portfolio/p-t-3@2x.jpg 2x, ./assets/img/portfolio/p-t-3.jpg 1x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./assets/img/portfolio/p-t-3@2x.jpg 2x, ./assets/img/portfolio/p-t-3.jpg 1x"
+                        media="(max-width: 767px)"
+                      />
+                      <img src="./assets/img/portfolio/p-t-3.jpg" alt="project" />
+                    </picture>
+                    <div class="cases__item-info">
+                      <h5 class="cases__item-name">Israel TV</h5>
+                      <ul class="tag__list">
+                        <li class="tag__item p-3">6+ months</li>
+                        <li class="tag__item p-3">TV Broadcasting</li>
+                        <li class="tag__item p-3">CRM</li>
+                        <li class="tag__item p-3">TV App</li>
+                        <li class="tag__item p-3">Web Design</li>
+                        <li class="tag__item p-3">Mobile App</li>
+                        <li class="tag__item p-3">Redesign</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="elem-action">
+                <a href="portfolio.html" class="btn btn_primary cases__btn">
+                  <span class="btn__text">View All Cases</span>
+                  <span class="btn__icon btn__icon-arrow">
+                    <span class="icon-arrow-right"></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="quota">
+        <div class="container">
+          <div class="quota__content">
+            <blockquote class="quota__text">
+              Transforming <mark>visions</mark> into digital masterpieces—where creativity meets
+              <mark>excellence</mark> to bring your ideas to life.
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="team section">
+        <div class="container">
+          <div class="team__content">
+            <h2 class="team__title team__title-mob">Our team of <span class="text-color">experts</span></h2>
+            <div class="team__list">
+              <div class="team__item">
+                <div class="team__item-wrapper">
+                  <div class="team__banner">
+                    <h2 class="team__title">Our team of <span class="text-color">experts</span></h2>
+                    <p class="team__banner-text p-1">Discover how to enhance your product</p>
+                    <button class="btn btn_primary team__btn">
+                      <span class="btn__text">Request Consultation</span>
+                      <span class="btn__icon btn__icon-arrow">
+                        <span class="icon-arrow-right"></span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="swiper team__swiper">
+                    <div class="swiper-wrapper">
+                      <div class="team__info swiper-slide">
+                        <div class="team__info-text">
+                          <ul>
+                            <li><h4>Morris S.</h4></li>
+                            <li>
+                              <span class="p-2">Senior UX/UI designer </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="team__item-img">
+                          <img
+                            srcset="./assets/img/team/experts-1.png 1x, ./assets/img/team/experts-1@2x.png 2x"
+                            src="./assets/img/team/experts-1.png"
+                            alt="experts"
+                          />
+                        </div>
+                        <ul class="team__item-skills">
+                          <li>
+                            <span class="icon icon-star"></span>
+                            <h5>5 years of experience</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-tick"></span>
+                            <h5>20+ projects delivered</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-coffee"></span>
+                            <h5>123 cups of coffee</h5>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="team__info swiper-slide">
+                        <div class="team__info-text">
+                          <ul>
+                            <li><h4>Morris S.</h4></li>
+                            <li>
+                              <span class="p-2">Senior Markup developer </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="team__item-img">
+                          <img
+                            srcset="./assets/img/team/experts-2.png 1x, ./assets/img/team/experts-2@2x.png 2x"
+                            src="./assets/img/team/experts-2.png"
+                            alt="experts"
+                          />
+                        </div>
+                        <ul class="team__item-skills">
+                          <li>
+                            <span class="icon icon-star"></span>
+                            <h5>5 years of experience</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-tick"></span>
+                            <h5>20+ projects delivered</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-coffee"></span>
+                            <h5>123 cups of coffee</h5>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="team__info swiper-slide">
+                        <div class="team__info-text">
+                          <ul>
+                            <li><h4>Morris S.</h4></li>
+                            <li>
+                              <span class="p-2">Senior Engineering Manager </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="team__item-img">
+                          <img
+                            srcset="./assets/img/team/experts-3.png 1x, ./assets/img/team/experts-3@2x.png 2x"
+                            src="./assets/img/team/experts-3.png"
+                            alt="experts"
+                          />
+                        </div>
+                        <ul class="team__item-skills">
+                          <li>
+                            <span class="icon icon-star"></span>
+                            <h5>5 years of experience</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-tick"></span>
+                            <h5>20+ projects delivered</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-coffee"></span>
+                            <h5>123 cups of coffee</h5>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="team__info swiper-slide">
+                        <div class="team__info-text">
+                          <ul>
+                            <li><h4>Morris S.</h4></li>
+                            <li>
+                              <span class="p-2">Senior UX/UI designer </span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="team__item-img">
+                          <img
+                            srcset="./assets/img/team/experts-4.png 1x, ./assets/img/team/experts-4@2x.png 2x"
+                            src="./assets/img/team/experts-4.png"
+                            alt="experts"
+                          />
+                        </div>
+                        <ul class="team__item-skills">
+                          <li>
+                            <span class="icon icon-star"></span>
+                            <h5>5 years of experience</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-tick"></span>
+                            <h5>20+ projects delivered</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-coffee"></span>
+                            <h5>123 cups of coffee</h5>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="team__info swiper-slide">
+                        <div class="team__info-text">
+                          <ul>
+                            <li><h4>Morris S.</h4></li>
+                            <li>
+                              <span class="p-2">CMS Expert</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="team__item-img">
+                          <img
+                            srcset="./assets/img/team/experts-5.png 1x, ./assets/img/team/experts-5@2x.png 2x"
+                            src="./assets/img/team/experts-5.png"
+                            alt="experts"
+                          />
+                        </div>
+                        <ul class="team__item-skills">
+                          <li>
+                            <span class="icon icon-star"></span>
+                            <h5>5 years of experience</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-tick"></span>
+                            <h5>20+ projects delivered</h5>
+                          </li>
+                          <li>
+                            <span class="icon icon-coffee"></span>
+                            <h5>123 cups of coffee</h5>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper__nav">
+                      <div class="swiper__button-prev">
+                        <span class="icon-arrow-right"></span>
+                      </div>
+                      <div class="swiper__button-next">
+                        <span class="icon-arrow-right"></span>
+                      </div>
+                    </div>
+                    <button class="btn btn_primary team__btn">
+                      <span class="btn__text">Request Consultation</span>
+                      <span class="btn__icon btn__icon-arrow">
+                        <span class="icon-arrow-right"></span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta section">
+        <div class="container">
+          <div class="cta__content">
+            <h2 class="cta__title">Ready to Dive into <span class="text-color">Creativity?</span></h2>
+            <p class="cta__description p-1">Your Vision, Our Expertise</p>
+            <div class="section__action cta__action">
+              <a href="#" class="btn btn_primary-green">
+                <span class="btn__icon icon-calendar"></span>
+                <span class="btn__text">Schedule a Meeting</span>
+              </a>
+              <button class="btn btn_secondary cta__btn">
+                <span class="btn__text">Request Consultation</span>
+                <span class="btn__icon icon-arrow-right"> </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <load src="./components/footer.html" />
+
+    <load src="./components/request_popup.html" />
+
+    <load src="./components/popup-mini.html" />
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

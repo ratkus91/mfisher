@@ -1,0 +1,181 @@
+@import "media";
+@import "vars";
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family), sans-serif;
+  background: var(--white);
+  color: var(--dark-black);
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  min-height: 100vh;
+  min-width: 320px;
+  overflow-x: hidden;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.img,
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.text-color {
+  color: var(--main-green);
+}
+
+.swiper-button-disabled {
+  opacity: 0.2;
+}
+
+mark {
+  background-color: var(--main-green-50);
+  padding: 0 2px;
+}
+
+a {
+  cursor: pointer;
+}
+
+input,
+textarea,
+button,
+select {
+  outline: none;
+}
+
+.elem-action {
+  a {
+    display: inline-flex;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+}
+
+.wrapper {
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+
+.section {
+  padding: 60px 0;
+
+  @include mobile {
+    padding: 90px 0;
+  }
+
+  @include desktop {
+    padding: 120px 0;
+  }
+}
+
+.container {
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include tablet {
+    max-width: 750px;
+    padding: 0 15px;
+  }
+
+  @include desktop {
+    max-width: 1290px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.services,
+.services-grid {
+  .tag {
+    &__list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 6px 6px;
+      flex-wrap: wrap;
+      margin: 12px 0 16px;
+    }
+
+    &__item {
+      color: var(--main-green);
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 2px 4px;
+      width: fit-content;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.portfolio__loader {
+  width: 60px;
+  margin: 0 auto;
+  transform: translateY(-30px);
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side, var(--main-purple) 90%, #0000);
+  background:
+    var(--_g) 0% 50%,
+    var(--_g) 50% 50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  20% {
+    background-position:
+      0% 0%,
+      50% 50%,
+      100% 50%;
+  }
+  40% {
+    background-position:
+      0% 100%,
+      50% 0%,
+      100% 50%;
+  }
+  60% {
+    background-position:
+      0% 50%,
+      50% 100%,
+      100% 0%;
+  }
+  80% {
+    background-position:
+      0% 50%,
+      50% 50%,
+      100% 100%;
+  }
+}

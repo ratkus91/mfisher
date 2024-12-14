@@ -1,0 +1,171 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <ul class="footer__text">
+        <li class="footer__text-item">
+          <h4 class="footer__text-title">Elevating brands through digital innovation.</h4>
+        </li>
+        <li class="footer__text-item"><p class="footer__text-description p-3">Mary Fisher.</p></li>
+      </ul>
+      <ul class="footer__menu">
+        <li><p class="p-1">Company</p></li>
+        <li class="footer__menu-item">
+          <a href="./index.html" class="footer__menu-link p-2">Home</a>
+        </li>
+        <li class="footer__menu-item">
+          <a href="./services.html" class="footer__menu-link p-2">Services</a>
+        </li>
+        <li class="footer__menu-item">
+          <a href="./portfolio.html" class="footer__menu-link p-2">Portfolio</a>
+        </li>
+        <li class="footer__menu-item">
+          <a href="./about.html" class="footer__menu-link p-2">About Us</a>
+        </li>
+      </ul>
+      <ul class="footer__social">
+        <li><p class="p-1">Socials</p></li>
+        <li class="footer__social-item">
+          <a href="https://dribbble.com" class="footer__social-link p-2" target="_blank">
+            <span class="footer__social-text">Dribbble</span>
+            <span class="footer__social-icon icon-dribbble"></span>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="https://behance.com" class="footer__social-link p-2" target="_blank">
+            <span class="footer__social-text">Behance</span>
+            <span class="footer__social-icon icon-behance"></span>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="https://facebook.com" class="footer__social-link p-2" target="_blank">
+            <span class="footer__social-text">Facebook</span>
+            <span class="footer__social-icon icon-facebook"></span>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a href="https://linkedin.com" class="footer__social-link p-2" target="_blank">
+            <span class="footer__social-text">LinkedIn</span>
+            <span class="footer__social-icon icon-linkedin"></span>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__contacts">
+        <li><p class="p-1">Contact</p></li>
+        <li class="footer__contacts-item">
+          <span class="icon-sms icon"></span>
+          <a id="email-address" class="p-2" href="mailto:hello@mfisher.agency">hello@mfisher.agency</a>
+          <span class="icon-copy icon_primary-white" id="email-copy" onclick="copyEmail()"></span>
+        </li>
+        <li class="footer__contacts-item">
+          <span class="icon icon-call"></span><a id="phone-number" class="p-2" href="tel:+123455677">+ 1 234 55 677</a>
+          <span id="phone-copy" class="icon-copy icon_primary-white" onclick="copyPhoneNumber()"></span>
+        </li>
+        <li class="footer__contacts-item">
+          <span class="icon icon-location"></span>
+          <p class="p-2">Warsaw, Poland</p>
+        </li>
+        <li class="footer__contacts-item">
+          <a href="./contact-us.html" class="btn btn_secondary footer__btn footer__btn-desk">
+            <span class="btn__text">Contact Us</span>
+            <span class="btn__icon icon-arrow-right"> </span>
+          </a>
+        </li>
+      </ul>
+      <a href="./contact-us.html" class="btn btn_secondary footer__btn footer__btn-mob">
+        <span class="btn__text">Contact Us</span>
+        <span class="btn__icon icon-arrow-right"> </span>
+      </a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="footer-bottom__content">
+      <span>© 2023 MaryFisher. All Rights Reserved.</span>
+      <a href="#" target="_blank">Terms of Service</a>
+      <a href="#" target="_blank">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-menu" id="mobMenu">
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="./index.html" class="nav__link">Home</a>
+      </li>
+      <li class="nav__item">
+        <a href="./portfolio.html" class="nav__link">Portfolio</a>
+      </li>
+      <li class="nav__item">
+        <a href="./services.html" class="nav__link">Services</a>
+      </li>
+      <li class="nav__item">
+        <a href="./about.html" class="nav__link">About Us</a>
+      </li>
+    </ul>
+    <ul class="btn__list">
+      <li class="btn__item">
+        <a href="./contact-us.html" class="btn btn_primary">
+          <span class="btn__text">Contact Us</span>
+          <span class="btn__icon icon-arrow-right"> </span>
+        </a>
+      </li>
+      <li class="btn__item">
+        <a href="#" class="btn btn_secondary" target="_blank">
+          <span class="btn__icon icon-calendar"> </span>
+          <span class="btn__text">Schedule a Meeting</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function copyToClipboard(elementId, messageType) {
+    const element = document.getElementById(elementId);
+
+    if (!element) {
+      console.error(`Элемент с ID "${elementId}" не найден`);
+      return;
+    }
+
+    const text = element.textContent;
+
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        console.log(`${messageType} скопирован: ${text}`);
+      })
+      .catch((err) => {
+        console.error(`Ошибка при копировании ${messageType}:`, err);
+      });
+  }
+
+  function copyPhoneNumber() {
+    copyToClipboard("phone-number", "Номер телефона");
+  }
+
+  function copyEmail() {
+    copyToClipboard("email-address", "Email");
+  }
+</script>
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("preloader");
+
+    const pageKey = `hasVisited_${window.location.pathname}`;
+
+    const isFirstVisitToPage = !localStorage.getItem(pageKey);
+
+    if (isFirstVisitToPage) {
+      setTimeout(() => {
+        loader.style.display = "none";
+        localStorage.setItem(pageKey, "true");
+      }, 2000);
+    } else {
+      loader.style.display = "none";
+    }
+  });
+</script>
