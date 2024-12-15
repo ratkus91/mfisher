@@ -41,7 +41,8 @@ export default defineConfig(({ command }) => {
       },
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "./src/styles/vars.scss";`,
+          api: "legacy",
+          additionalData: `@use "./src/styles/vars.scss";`,
         },
       },
     },
