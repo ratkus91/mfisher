@@ -11,12 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Unbounded:wght@400..700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/services-h-hYCO8I.js"></script>
+    <script type="module" crossorigin src="/assets/services-CiqwklDr.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-DzozXdfx.js">
-    <link rel="modulepreload" crossorigin href="/assets/main-B4HObDh5.js">
-    <link rel="stylesheet" crossorigin href="/assets/main-DOqPi0_U.css">
+    <link rel="modulepreload" crossorigin href="/assets/main-CKXVQeM5.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-B65SbFeh.css">
     <link rel="stylesheet" crossorigin href="/assets/vendor-DceGFQtL.css">
-    <link rel="stylesheet" crossorigin href="/assets/services-CkiKM-n5.css">
+    <link rel="stylesheet" crossorigin href="/assets/services-Fn5MR5Qj.css">
   </head>
   <body id="content" class="services-page">
     <style>
@@ -242,17 +242,25 @@
         <div class="container">
           <div class="statistics__content">
             <h4 class="statistics__title">Get an <mark>effective</mark> design for your project</h4>
-            <ul class="statistics__list">
+            <ul class="statistics__list" id="stats">
               <li class="statistics__item">
-                <h3>50+</h3>
+                <div class="statistics__item-line">
+                  <h3 class="stat-number" data-target="50">0</h3>
+                  <h3>+</h3>
+                </div>
                 <p class="p-2">Designed projects</p>
               </li>
               <li class="statistics__item">
-                <h3>30+</h3>
+                <div class="statistics__item-line">
+                  <h3 class="stat-number" data-target="30">0</h3>
+                  <h3>+</h3>
+                </div>
                 <p class="p-2">Effective redesigns</p>
               </li>
               <li class="statistics__item">
-                <h3>13</h3>
+                <div class="statistics__item-line">
+                  <h3 class="stat-number" data-target="13">0</h3>
+                </div>
                 <p class="p-2">Successful audits</p>
               </li>
             </ul>
@@ -468,12 +476,12 @@
                         </li>
                       </ul>
                       <div class="elem-action">
-                        <a href="#" class="btn btn_secondary accordion__btn">
+                        <button class="btn btn_secondary accordion__btn">
                           <span class="btn__text">Let’s Talk</span>
                           <span class="btn__icon btn__icon-arrow">
                             <span class="icon-arrow-right"></span>
                           </span>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -512,12 +520,12 @@
                         </li>
                       </ul>
                       <div class="elem-action">
-                        <a href="#" class="btn btn_secondary accordion__btn">
+                        <button class="btn btn_secondary accordion__btn">
                           <span class="btn__text">Let’s Talk</span>
                           <span class="btn__icon btn__icon-arrow">
                             <span class="icon-arrow-right"></span>
                           </span>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -964,7 +972,7 @@
 
         <ul class="social__list">
           <li class="social__item">
-            <a href="https://dribble.com" class="social__link" target="_blank">
+            <a href="https://dribbble.com" class="social__link" target="_blank">
               <span class="social__icon icon-dribbble"></span>
             </a>
           </li>
@@ -1092,7 +1100,8 @@
               <input type="file" id="file-upload" name="files" style="display: none" multiple />
             </div>
             <span class="p-4"
-              >*No more than 3 files may be attached up to 30 MB each. Formats doc, docx, pdf, ppt, pptx, xlsx.</span
+              >*No more than 3 files may be attached up to 30 MB each. Formats doc, docx, pdf, ppt, pptx, xlsx, zip,
+              rar.</span
             >
           </div>
         </form>
@@ -1125,5 +1134,51 @@
 </div>
 
 
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const statsBlock = document.getElementById("stats");
+        const numbers = document.querySelectorAll(".stat-number");
+
+        const animateNumbers = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              numbers.forEach((num) => {
+                const target = +num.getAttribute("data-target");
+                const duration = 2000;
+                const increment = target / (duration / 16);
+
+                let current = 0;
+
+                const updateNumber = () => {
+                  current += increment;
+                  if (current >= target) {
+                    num.textContent = target;
+                    return;
+                  }
+                  num.textContent = Math.round(current);
+                  requestAnimationFrame(updateNumber);
+                };
+
+                num.classList.add("animation");
+                num.addEventListener("animationend", () => {
+                  num.classList.remove("animation");
+                });
+
+                updateNumber();
+              });
+
+              observer.unobserve(statsBlock);
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(animateNumbers, {
+          threshold: 0,
+        });
+
+        observer.observe(statsBlock);
+      });
+    </script>
   </body>
 </html>

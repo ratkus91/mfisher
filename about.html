@@ -12,12 +12,12 @@
       rel="stylesheet"
     />
 
-    <script type="module" crossorigin src="/assets/about-Bg-1DZU0.js"></script>
+    <script type="module" crossorigin src="/assets/about-mG41GjXU.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-DzozXdfx.js">
-    <link rel="modulepreload" crossorigin href="/assets/main-B4HObDh5.js">
-    <link rel="stylesheet" crossorigin href="/assets/main-DOqPi0_U.css">
+    <link rel="modulepreload" crossorigin href="/assets/main-CKXVQeM5.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-B65SbFeh.css">
     <link rel="stylesheet" crossorigin href="/assets/vendor-DceGFQtL.css">
-    <link rel="stylesheet" crossorigin href="/assets/about-BEiH7G0Z.css">
+    <link rel="stylesheet" crossorigin href="/assets/about-CThqOe5x.css">
   </head>
   <body id="content">
     <style>
@@ -240,21 +240,31 @@
         <div class="container">
           <div class="number__content">
             <h2 class="number__title">Let the numbers speak</h2>
-            <ul class="number__list">
+            <ul class="number__list" id="stats">
               <li class="number__item">
-                <h3>50+</h3>
+                <div class="number__item-line">
+                  <h3 class="stat-number" data-target="50">0</h3>
+                  <h3>+</h3>
+                </div>
                 <p class="p-2">Successful Projects</p>
               </li>
               <li class="number__item">
-                <h3>9</h3>
+                <div class="number__item-line">
+                  <h3 class="stat-number" data-target="9">0</h3>
+                </div>
                 <p class="p-2">Years on the Market</p>
               </li>
               <li class="number__item">
-                <h3>7</h3>
+                <div class="number__item-line">
+                  <h3 class="stat-number" data-target="7">0</h3>
+                </div>
                 <p class="p-2">Experienced Specialists</p>
               </li>
               <li class="number__item">
-                <h3>90+</h3>
+                <div class="number__item-line">
+                  <h3 class="stat-number" data-target="90">0</h3>
+                  <h3>+</h3>
+                </div>
                 <p class="p-2">Customer Satisfaction</p>
               </li>
             </ul>
@@ -496,7 +506,7 @@
 
         <ul class="social__list">
           <li class="social__item">
-            <a href="https://dribble.com" class="social__link" target="_blank">
+            <a href="https://dribbble.com" class="social__link" target="_blank">
               <span class="social__icon icon-dribbble"></span>
             </a>
           </li>
@@ -624,7 +634,8 @@
               <input type="file" id="file-upload" name="files" style="display: none" multiple />
             </div>
             <span class="p-4"
-              >*No more than 3 files may be attached up to 30 MB each. Formats doc, docx, pdf, ppt, pptx, xlsx.</span
+              >*No more than 3 files may be attached up to 30 MB each. Formats doc, docx, pdf, ppt, pptx, xlsx, zip,
+              rar.</span
             >
           </div>
         </form>
@@ -830,5 +841,51 @@
 </script>
 
 
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const statsBlock = document.getElementById("stats");
+        const numbers = document.querySelectorAll(".stat-number");
+
+        const animateNumbers = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              numbers.forEach((num) => {
+                const target = +num.getAttribute("data-target");
+                const duration = 2000;
+                const increment = target / (duration / 16);
+
+                let current = 0;
+
+                const updateNumber = () => {
+                  current += increment;
+                  if (current >= target) {
+                    num.textContent = target;
+                    return;
+                  }
+                  num.textContent = Math.round(current);
+                  requestAnimationFrame(updateNumber);
+                };
+
+                num.classList.add("animation");
+                num.addEventListener("animationend", () => {
+                  num.classList.remove("animation");
+                });
+
+                updateNumber();
+              });
+
+              observer.unobserve(statsBlock);
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(animateNumbers, {
+          threshold: 0,
+        });
+
+        observer.observe(statsBlock);
+      });
+    </script>
   </body>
 </html>
