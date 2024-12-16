@@ -98,6 +98,18 @@
       padding: 30px 63px;
     }
   }
+
+  &__item-line {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .stat-number {
+      &.animation {
+        animation: scaleUp 2s ease-in-out;
+      }
+    }
+  }
 }
 
 .founders {
@@ -206,11 +218,20 @@
   &__item-links {
     display: flex;
     gap: 30px;
-    color: var(--medium-grey);
 
     .icon {
       font-size: 24px;
       line-height: 1;
+      color: var(--medium-grey);
+      transition: color ease-in-out 0.4s;
+    }
+
+    a {
+      &:hover {
+        .icon {
+          color: var(--main-purple);
+        }
+      }
     }
   }
 }
@@ -404,5 +425,17 @@ section {
 
   @include desktop {
     padding: 120px 0;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
   }
 }

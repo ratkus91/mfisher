@@ -290,6 +290,15 @@
       img {
         display: block;
         width: 100%;
+        transition: transform ease-in-out 0.4s;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        img {
+          transform: scale(1.1);
+        }
       }
     }
 
@@ -665,7 +674,7 @@
         grid-column: 1 / -1;
       }
 
-      .portfolio__item-text {
+      .cases__item-text {
         left: 90px;
       }
     }

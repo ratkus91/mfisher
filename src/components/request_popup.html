@@ -38,7 +38,7 @@
 
         <ul class="social__list">
           <li class="social__item">
-            <a href="https://dribble.com" class="social__link" target="_blank">
+            <a href="https://dribbble.com" class="social__link" target="_blank">
               <span class="social__icon icon-dribbble"></span>
             </a>
           </li>
@@ -166,7 +166,8 @@
               <input type="file" id="file-upload" name="files" style="display: none" multiple />
             </div>
             <span class="p-4"
-              >*No more than 3 files may be attached up to 30 MB each. Formats doc, docx, pdf, ppt, pptx, xlsx.</span
+              >*No more than 3 files may be attached up to 30 MB each. Formats doc, docx, pdf, ppt, pptx, xlsx, zip,
+              rar.</span
             >
           </div>
         </form>
@@ -258,7 +259,7 @@
 
     const validateFiles = () => {
       const files = fileInput.files;
-      const allowedExtensions = ["doc", "docx", "pdf", "ppt", "pptx", "xlsx"];
+      const allowedExtensions = ["doc", "docx", "pdf", "ppt", "pptx", "xlsx", "zip", "rar"];
       const maxFileSize = 30 * 1024 * 1024; // 30MB
       const maxFiles = 3;
 
@@ -366,7 +367,7 @@
               fileList.innerHTML = "";
               budgetOptions.forEach((option) => option.classList.remove("selected"));
               uploadedFiles.clear();
-              resetErrors(); // Удаляем ошибки после успешной отправки
+              resetErrors();
             });
           })
           .catch((error) => {

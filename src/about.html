@@ -46,21 +46,31 @@
         <div class="container">
           <div class="number__content">
             <h2 class="number__title">Let the numbers speak</h2>
-            <ul class="number__list">
+            <ul class="number__list" id="stats">
               <li class="number__item">
-                <h3>50+</h3>
+                <div class="number__item-line">
+                  <h3 class="stat-number" data-target="50">0</h3>
+                  <h3>+</h3>
+                </div>
                 <p class="p-2">Successful Projects</p>
               </li>
               <li class="number__item">
-                <h3>9</h3>
+                <div class="number__item-line">
+                  <h3 class="stat-number" data-target="9">0</h3>
+                </div>
                 <p class="p-2">Years on the Market</p>
               </li>
               <li class="number__item">
-                <h3>7</h3>
+                <div class="number__item-line">
+                  <h3 class="stat-number" data-target="7">0</h3>
+                </div>
                 <p class="p-2">Experienced Specialists</p>
               </li>
               <li class="number__item">
-                <h3>90+</h3>
+                <div class="number__item-line">
+                  <h3 class="stat-number" data-target="90">0</h3>
+                  <h3>+</h3>
+                </div>
                 <p class="p-2">Customer Satisfaction</p>
               </li>
             </ul>
@@ -269,5 +279,51 @@
     <load src="./components/footer.html" />
 
     <script type="module" src="js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const statsBlock = document.getElementById("stats");
+        const numbers = document.querySelectorAll(".stat-number");
+
+        const animateNumbers = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              numbers.forEach((num) => {
+                const target = +num.getAttribute("data-target");
+                const duration = 2000;
+                const increment = target / (duration / 16);
+
+                let current = 0;
+
+                const updateNumber = () => {
+                  current += increment;
+                  if (current >= target) {
+                    num.textContent = target;
+                    return;
+                  }
+                  num.textContent = Math.round(current);
+                  requestAnimationFrame(updateNumber);
+                };
+
+                num.classList.add("animation");
+                num.addEventListener("animationend", () => {
+                  num.classList.remove("animation");
+                });
+
+                updateNumber();
+              });
+
+              observer.unobserve(statsBlock);
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(animateNumbers, {
+          threshold: 0,
+        });
+
+        observer.observe(statsBlock);
+      });
+    </script>
   </body>
 </html>
