@@ -22,3 +22,8 @@
   }
 }
 
+@mixin media-custom-height($height) {
+  @media (max-height: $height) {
+    @content;
+  }
+}

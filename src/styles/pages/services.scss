@@ -131,6 +131,18 @@
         max-width: 260px;
       }
     }
+
+    &__item-line {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      .stat-number {
+        &.animation {
+          animation: scaleUp 2s ease-in-out;
+        }
+      }
+    }
   }
 
   .services-grid {
@@ -582,5 +594,17 @@
     @include desktop {
       max-width: 70%;
     }
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -35,14 +35,15 @@
     height: 100%;
     overflow-y: auto;
 
-    @include tablet {
-    }
-
     @include desktop {
       max-width: 1087px;
       width: 100%;
       max-height: none;
       height: fit-content;
+    }
+
+    @include media-custom-height(774px) {
+      height: 100%;
     }
   }
 
@@ -74,7 +75,7 @@
     }
 
     @include desktop {
-      padding: 60px 52px 45px 40px;
+      padding: 40px 40px 40px 46px;
     }
   }
 
@@ -89,7 +90,7 @@
     @include desktop {
       display: flex;
       flex-direction: column;
-      padding: 60px;
+      padding: 40px 60px 70px 60px;
     }
 
     .contacts {
@@ -130,6 +131,15 @@
 
       &__icon {
         color: var(--main-green);
+        transition: color ease-in-out 0.4s;
+      }
+
+      &__item {
+        &:hover {
+          .social__icon {
+            color: var(--hover-green);
+          }
+        }
       }
     }
   }
