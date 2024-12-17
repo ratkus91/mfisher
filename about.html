@@ -12,10 +12,10 @@
       rel="stylesheet"
     />
 
-    <script type="module" crossorigin src="/assets/about-Mh6JMLxW.js"></script>
+    <script type="module" crossorigin src="/assets/about-BWh54NCR.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-DzozXdfx.js">
-    <link rel="modulepreload" crossorigin href="/assets/main-D9gAbWyh.js">
-    <link rel="stylesheet" crossorigin href="/assets/main-C8QBFrJ9.css">
+    <link rel="modulepreload" crossorigin href="/assets/main-CFnMgw7S.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-BnJqxQca.css">
     <link rel="stylesheet" crossorigin href="/assets/vendor-DceGFQtL.css">
     <link rel="stylesheet" crossorigin href="/assets/about-CThqOe5x.css">
   </head>
@@ -515,11 +515,11 @@
               <span class="social__icon icon-behance"></span>
             </a>
           </li>
-          <li class="social__item">
-            <a href="https://facebook.com" class="social__link" target="_blank">
-              <span class="social__icon icon-facebook"></span>
-            </a>
-          </li>
+          <!--          <li class="social__item">-->
+          <!--            <a href="https://facebook.com" class="social__link" target="_blank">-->
+          <!--              <span class="social__icon icon-facebook"></span>-->
+          <!--            </a>-->
+          <!--          </li>-->
           <li class="social__item">
             <a href="https://linkedin.com" class="social__link" target="_blank">
               <span class="social__icon icon-linkedin"></span>
@@ -614,7 +614,15 @@
                 <span class="p-2">I want to protect my data by signing an NDA.</span>
               </label>
             </div>
-            <span class="icon-info"></span>
+            <div class="tooltip__container">
+              <span class="icon-info"></span>
+              <div class="tooltip">
+                <span class="p-4"
+                  >Before we discuss any details about your project you can request to sign a Non Disclosure
+                  Agreement</span
+                >
+              </div>
+            </div>
           </div>
 
           <span class="p-4 form__empty-error" id="empty-error" aria-live="assertive"></span>
@@ -706,12 +714,12 @@
             <span class="footer__social-icon icon-behance"></span>
           </a>
         </li>
-        <li class="footer__social-item">
-          <a href="https://facebook.com" class="footer__social-link p-2" target="_blank">
-            <span class="footer__social-text">Facebook</span>
-            <span class="footer__social-icon icon-facebook"></span>
-          </a>
-        </li>
+        <!--        <li class="footer__social-item">-->
+        <!--          <a href="https://facebook.com" class="footer__social-link p-2" target="_blank">-->
+        <!--            <span class="footer__social-text">Facebook</span>-->
+        <!--            <span class="footer__social-icon icon-facebook"></span>-->
+        <!--          </a>-->
+        <!--        </li>-->
         <li class="footer__social-item">
           <a href="https://linkedin.com" class="footer__social-link p-2" target="_blank">
             <span class="footer__social-text">LinkedIn</span>
@@ -751,7 +759,11 @@
 <div class="footer-bottom">
   <div class="container">
     <div class="footer-bottom__content">
-      <span>© 2023 MaryFisher. All Rights Reserved.</span>
+      <span
+        ><script>
+          document.write("©" + new Date().getFullYear() + " MaryFisher. All Rights Reserved.");
+        </script></span
+      >
       <a href="#" target="_blank">Terms of Service</a>
       <a href="#" target="_blank">Privacy Policy</a>
     </div>
