@@ -47,11 +47,11 @@
               <span class="social__icon icon-behance"></span>
             </a>
           </li>
-          <li class="social__item">
-            <a href="https://facebook.com" class="social__link" target="_blank">
-              <span class="social__icon icon-facebook"></span>
-            </a>
-          </li>
+          <!--          <li class="social__item">-->
+          <!--            <a href="https://facebook.com" class="social__link" target="_blank">-->
+          <!--              <span class="social__icon icon-facebook"></span>-->
+          <!--            </a>-->
+          <!--          </li>-->
           <li class="social__item">
             <a href="https://linkedin.com" class="social__link" target="_blank">
               <span class="social__icon icon-linkedin"></span>
@@ -146,7 +146,15 @@
                 <span class="p-2">I want to protect my data by signing an NDA.</span>
               </label>
             </div>
-            <span class="icon-info"></span>
+            <div class="tooltip__container">
+              <span class="icon-info"></span>
+              <div class="tooltip">
+                <span class="p-4"
+                  >Before we discuss any details about your project you can request to sign a Non Disclosure
+                  Agreement</span
+                >
+              </div>
+            </div>
           </div>
 
           <span class="p-4 form__empty-error" id="empty-error" aria-live="assertive"></span>
@@ -213,7 +221,7 @@
       uploadedFiles.clear();
       popup.classList.remove("is-open");
       document.querySelector("html").classList.remove("no-scroll");
-      resetErrors(); // Удаляем ошибки при закрытии
+      resetErrors();
     });
 
     popup.addEventListener("click", (event) => {
@@ -224,7 +232,7 @@
         uploadedFiles.clear();
         popup.classList.remove("is-open");
         document.querySelector("html").classList.remove("no-scroll");
-        resetErrors(); // Удаляем ошибки при клике вне формы
+        resetErrors();
       }
     });
 
