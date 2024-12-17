@@ -213,7 +213,7 @@
       uploadedFiles.clear();
       popup.classList.remove("is-open");
       document.querySelector("html").classList.remove("no-scroll");
-      resetErrors(); // Удаляем ошибки при закрытии
+      resetErrors();
     });
 
     popup.addEventListener("click", (event) => {
@@ -224,7 +224,7 @@
         uploadedFiles.clear();
         popup.classList.remove("is-open");
         document.querySelector("html").classList.remove("no-scroll");
-        resetErrors(); // Удаляем ошибки при клике вне формы
+        resetErrors();
       }
     });
 
