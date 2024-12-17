@@ -170,12 +170,12 @@
 
 .form {
   &__footer {
-    .p-4 {
+    .p-5 {
       color: var(--grey);
 
-      //@include desktop {
-      //  white-space: nowrap;
-      //}
+      @include desktop {
+        white-space: nowrap;
+      }
     }
   }
 
