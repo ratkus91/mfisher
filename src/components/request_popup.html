@@ -185,7 +185,6 @@
 </div>
 
 <script type="module">
-  import emailjs from "@emailjs/browser";
   document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".hero__btn, .team__btn, .cta__btn, .accordion__btn, .process__btn");
     const popup = document.getElementById("popup");
@@ -236,35 +235,6 @@
       }
     });
 
-    const validateEmail = (email) => {
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (!emailRegex.test(email)) return false;
-
-      const domain = email.split("@")[1];
-      const domainParts = domain.split(".");
-      if (domainParts.length < 2) return false;
-
-      const tld = domainParts[domainParts.length - 1];
-      return tld.length >= 2;
-    };
-
-    const validateField = (field) => {
-      const errorSpan = document.querySelector(`#${field.id}-error`);
-      if (field.type === "email") {
-        if (!validateEmail(field.value)) {
-          errorSpan.textContent = "Invalid E-mail";
-          return false;
-        }
-      } else if (!field.checkValidity()) {
-        const errorMessage = field.getAttribute("data-error-message") || "Invalid field.";
-        errorSpan.textContent = errorMessage;
-        return false;
-      } else {
-        errorSpan.textContent = "";
-      }
-      return true;
-    };
-
     const validateFiles = () => {
       const files = fileInput.files;
       const allowedExtensions = ["doc", "docx", "pdf", "ppt", "pptx", "xlsx", "zip", "rar"];
@@ -308,6 +278,7 @@
         deleteButton.addEventListener("click", () => {
           listItem.remove();
           uploadedFiles.delete(file.name);
+          fileInput.value = "";
           errorContainer.textContent = "";
         });
 

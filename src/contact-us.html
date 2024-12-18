@@ -317,6 +317,7 @@
             deleteButton.addEventListener("click", () => {
               listItem.remove();
               uploadedFiles.delete(file.name);
+              fileInput.value = "";
               errorContainer.textContent = "";
               newFilesCount--;
             });
