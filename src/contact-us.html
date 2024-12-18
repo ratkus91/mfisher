@@ -67,7 +67,7 @@
             <div class="contacts__content-form">
               <h5>Send us a message</h5>
               <form
-                action="form.php"
+                action="send-email.php"
                 method="POST"
                 enctype="multipart/form-data"
                 id="order-form"
@@ -372,14 +372,13 @@
             errorContainer.textContent = "";
             const formData = new FormData(form);
 
-            // Добавляем выбранный бюджет
             const budgetElement = document.querySelector(".budget-option.selected");
             if (budgetElement) {
               formData.append("user-budget", budgetElement.dataset.value);
             }
 
             try {
-              const response = await fetch("form.php", {
+              const response = await fetch("send-email.php", {
                 method: "POST",
                 body: formData,
               });
