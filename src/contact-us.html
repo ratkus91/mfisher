@@ -66,7 +66,16 @@
             </div>
             <div class="contacts__content-form">
               <h5>Send us a message</h5>
-              <form id="order-form" name="order-form" class="form order-form" novalidate autocomplete="off">
+              <form
+                action="form.php"
+                method="POST"
+                enctype="multipart/form-data"
+                id="order-form"
+                name="order-form"
+                class="form order-form"
+                novalidate
+                autocomplete="off"
+              >
                 <div class="input-field">
                   <div class="input-field-box">
                     <input
@@ -213,7 +222,6 @@
 
     <script type="module">
       import intlTelInput from "intl-tel-input";
-      import emailjs from "@emailjs/browser";
 
       document.addEventListener("DOMContentLoaded", () => {
         const form = document.querySelector(".order-form");
@@ -259,8 +267,7 @@
 
         const updateCounter = () => {
           const inputValue = textarea.value;
-          const validChars = inputValue.split("");
-          const validLength = validChars.length;
+          const validLength = inputValue.length;
 
           counter.textContent = `${validLength}/${maxLength}`;
           if (validLength > maxLength) {
@@ -358,45 +365,38 @@
           event.target.classList.add("selected");
         };
 
-        form.addEventListener("submit", (e) => {
+        form.addEventListener("submit", async (e) => {
           e.preventDefault();
 
           if (validateForm()) {
             errorContainer.textContent = "";
             const formData = new FormData(form);
 
-            emailjs.init("lLSKvVcx1LQ3lQ7Qy");
+            // Добавляем выбранный бюджет
+            const budgetElement = document.querySelector(".budget-option.selected");
+            if (budgetElement) {
+              formData.append("user-budget", budgetElement.dataset.value);
+            }
 
-            const data = {
-              user_name: formData.get("user-name"),
-              user_email: formData.get("user-email"),
-              user_phone: formData.get("user-phone"),
-              user_comment: formData.get("user-comment"),
-              project_budget:
-                document.querySelector(".budget-option.selected")?.getAttribute("data-value") || "Not specified",
-              user_nda: formData.get("user-nda") ? "Yes" : "No",
-            };
+            try {
+              const response = await fetch("form.php", {
+                method: "POST",
+                body: formData,
+              });
 
-            emailjs
-              .send("service_d3x1f1d", "template_9nakrge", data)
-              .then(() => {
-                const popup = document.getElementById("popup-mini");
-                popup.classList.remove("hide");
-                popup.classList.add("is-open");
-
-                popup.querySelector(".popup-mini__close-btn").addEventListener("click", () => {
-                  popup.classList.remove("is-open");
-                  popup.classList.add("hide");
-                });
+              if (response.ok) {
+                alert("Your request has been successfully sent!");
                 form.reset();
                 fileList.innerHTML = "";
                 budgetOptions.forEach((option) => option.classList.remove("selected"));
                 uploadedFiles.clear();
-              })
-              .catch((error) => {
-                console.error("Error submitting form:", error);
-                alert("There was an error submitting the form.");
-              });
+              } else {
+                throw new Error("Failed to send the request.");
+              }
+            } catch (error) {
+              console.error("Error submitting form:", error);
+              alert("There was an error submitting the form.");
+            }
           } else {
             errorContainer.textContent = "Please fix the errors above before submitting.";
           }
