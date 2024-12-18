@@ -94,3 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     http_response_code(405);
     echo 'Method not allowed.';
 }
+<?php
+echo json_encode(["status" => "success", "message" => "PHP script reached"]);
+?>
