@@ -26,7 +26,8 @@
     "vite": "^5.4.6",
     "vite-plugin-full-reload": "^1.1.0",
     "vite-plugin-html-inject": "^1.1.2",
-    "vite-plugin-image-optimizer": "^1.1.8"
+    "vite-plugin-image-optimizer": "^1.1.8",
+    "vite-plugin-static-copy": "^2.2.0"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
