@@ -31,6 +31,9 @@ export default defineConfig(({ command }) => {
         },
       },
     },
+    server: {
+      historyApiFallback: true,
+    },
     css: {
       postcss: {
         plugins: [
