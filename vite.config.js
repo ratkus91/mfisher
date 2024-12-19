@@ -60,7 +60,7 @@ export default defineConfig(({ command }) => {
       viteStaticCopy({
         targets: [
           {
-            src: "form.php",
+            src: "*.php",
             dest: ".",
           },
         ],
