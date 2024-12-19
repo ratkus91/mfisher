@@ -1,5 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+echo('hello'); exit();
     $to = 'vitaly@ratkus.com.ua';
     $subject = 'New Request from Order Form';
 
