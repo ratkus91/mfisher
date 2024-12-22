@@ -1,0 +1,53 @@
+.privacy {
+  .hero {
+    background: url("../../assets/img/privacy-bg.jpg") no-repeat 50% 50% / cover;
+    padding: 205px 0 103px;
+
+    &__description-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 670px;
+      color: var(--medium-grey);
+    }
+  }
+
+  .text-page {
+    padding: 90px 0;
+
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+    }
+
+    h5 {
+      margin-bottom: 16px;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 760px;
+    }
+
+    &__item {
+      &:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    &__subitem {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
