@@ -77,7 +77,7 @@
   <div class="container">
     <div class="header__content">
       <nav class="nav">
-        <a class="nav__logo nav__logo_mob" href="./" aria-label="Site logo">
+        <a class="nav__logo nav__logo_mob" href="./" data-link aria-label="Site logo">
           <svg width="46" height="41" viewBox="0 0 46 41" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M5.74267 31.3673L6.47493 30.3588L2 22.6943L9.97351 24.6306M5.74267 31.3673L6.67833 36.5308M5.74267 31.3673L13.1466 32.3758M6.67833 36.5308L8.18354 39.1125M6.67833 36.5308L13.1466 32.3758M8.18354 39.1125L10.9905 40M8.18354 39.1125L13.1466 32.3758M10.9905 40H15.6689M10.9905 40L13.1466 32.3758M15.6689 40L16.8849 38.9915M15.6689 40L13.1466 32.3758M22.3813 34.4331L28.9716 16.0382M22.3813 34.4331L27.0189 39.5159L26.4087 40L16.8849 38.9915M22.3813 34.4331L16.8849 38.9915M22.3813 34.4331L13.1466 32.3758M28.9716 16.0382C28.9716 16.0382 29.2982 14.9825 29.6632 14.3843C29.8343 14.1038 29.9419 13.9522 30.1514 13.6985C30.3152 13.5001 30.4002 13.3786 30.5989 13.2144C30.8396 13.0156 30.998 12.9225 31.2904 12.811C31.622 12.6847 31.7944 12.6274 32.1447 12.569C32.6832 12.4793 33.0243 12.4909 33.5686 12.448C34.2179 12.3967 34.5874 12.3943 35.2365 12.448C36.224 12.5296 36.7595 12.7236 37.7181 12.9724C38.6514 13.2147 39.136 13.4898 40.0776 13.6985C40.924 13.8861 41.4084 13.9745 42.2744 14.0212C43.3391 14.0787 45 13.8599 45 13.8599L44.5932 13.3355M28.9716 16.0382L13.1466 32.3758M44.5932 13.3355L44.7966 13.2144L44.5932 12.6497H44.1457L43.6982 12.327M44.5932 13.3355L43.6982 13.2144C43.6982 13.2144 42.5078 13.0689 41.7455 12.9724C40.776 12.8496 40.2293 12.8013 39.264 12.6497C38.2422 12.4892 36.6604 12.1656 36.6604 12.1656L33.9347 11.8025L32.1854 12.1656L29.6632 12.6497M9.97351 24.6306C9.97351 24.6306 13.6448 21.4539 16.2384 19.7495C18.0781 18.5404 21.1202 16.9257 21.1202 16.9257L27.6698 12.9724M9.97351 24.6306L13.1466 32.3758M27.6698 12.9724L28.9716 12.1656L30.3141 10.8344L31.6973 9.38217L32.9584 8.13164M27.6698 12.9724C27.6698 12.9724 18.4248 22.4839 14.4484 29.8344C13.9178 30.8153 13.1466 32.3758 13.1466 32.3758M32.9584 8.13164L33.4465 7.32484L36.7824 2L36.9044 2.72611M32.9584 8.13164L29.6632 12.6497M32.9584 8.13164L36.9044 2.72611M36.9044 2.72611L37.3113 2.6051V3.69427M37.3113 3.69427L38.1249 4.70276V6.43737L38.5724 8.45435M37.3113 3.69427L33.9347 11.2378M38.5724 8.45435L42.6812 11.5202L43.4134 11.8025M38.5724 8.45435L33.9347 11.2378M43.4134 11.8025L43.6982 12.327M43.4134 11.8025L33.9347 11.2378M43.6982 12.327L33.9347 11.2378M13.1466 32.3758L27.6698 14.9087L29.6632 12.6497M29.6632 12.6497L33.9347 11.2378"
@@ -85,7 +85,7 @@
             />
           </svg>
         </a>
-        <a class="nav__logo nav__logo_desk" href="./">
+        <a class="nav__logo nav__logo_desk" href="./" data-link>
           <svg xmlns="http://www.w3.org/2000/svg" width="177" height="60" fill="none">
             <path
               stroke="currentColor"
@@ -104,24 +104,25 @@
         </a>
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="p-1 nav__link {=$highlight-home}" href="./">Home</a>
+            <a class="p-1 nav__link {=$highlight-home}" href="./" data-link>Home</a>
           </li>
           <li class="nav__item">
-            <a class="p-1 nav__link is-active" href="./portfolio">Portfolio</a>
+            <a class="p-1 nav__link is-active" href="./portfolio" data-link>Portfolio</a>
           </li>
           <li class="nav__item">
-            <a class="p-1 nav__link {=$highlight-services}" href="./services">Services</a>
+            <a class="p-1 nav__link {=$highlight-services}" href="./services" data-link>Services</a>
           </li>
           <li class="nav__item">
-            <a class="p-1 nav__link {=$highlight-about}" href="./about">About Us</a>
+            <a class="p-1 nav__link {=$highlight-about}" href="./about" data-link>About Us</a>
           </li>
         </ul>
-        <a href="./contact-us" class="nav__btn btn btn_secondary">
+        <a href="./contact-us" class="nav__btn btn btn_secondary" data-link>
           <span class="btn__text">Contact Us</span>
           <span class="btn__icon icon-arrow-right"></span>
         </a>
       </nav>
       <div class="header__toggle-btn" id="menuBtn">
+        wwa
         <span class="header__toggle-btn-icon"></span>
         <span class="header__toggle-btn-icon"></span>
         <span class="header__toggle-btn-icon"></span>
@@ -719,16 +720,16 @@
       <ul class="footer__menu">
         <li><p class="p-1">Company</p></li>
         <li class="footer__menu-item">
-          <a href="./" class="footer__menu-link p-2">Home</a>
+          <a href="./" class="footer__menu-link p-2" data-link>Home</a>
         </li>
         <li class="footer__menu-item">
-          <a href="./services" class="footer__menu-link p-2">Services</a>
+          <a href="./services" class="footer__menu-link p-2" data-link>Services</a>
         </li>
         <li class="footer__menu-item">
-          <a href="./portfolio" class="footer__menu-link p-2">Portfolio</a>
+          <a href="./portfolio" class="footer__menu-link p-2" data-link>Portfolio</a>
         </li>
         <li class="footer__menu-item">
-          <a href="./about" class="footer__menu-link p-2">About Us</a>
+          <a href="./about" class="footer__menu-link p-2" data-link>About Us</a>
         </li>
       </ul>
       <ul class="footer__social">
@@ -774,13 +775,13 @@
           <p class="p-2">Warsaw, Poland</p>
         </li>
         <li class="footer__contacts-item">
-          <a href="./contact-us" class="btn btn_secondary footer__btn footer__btn-desk">
+          <a href="./contact-us" data-link class="btn btn_secondary footer__btn footer__btn-desk">
             <span class="btn__text">Contact Us</span>
             <span class="btn__icon icon-arrow-right"> </span>
           </a>
         </li>
       </ul>
-      <a href="./contact-us" class="btn btn_secondary footer__btn footer__btn-mob">
+      <a href="./contact-us" data-link class="btn btn_secondary footer__btn footer__btn-mob">
         <span class="btn__text">Contact Us</span>
         <span class="btn__icon icon-arrow-right"> </span>
       </a>
@@ -795,8 +796,8 @@
           document.write("©" + new Date().getFullYear() + " MaryFisher. All Rights Reserved.");
         </script></span
       >
-      <a href="terms-of-service" target="_blank">Terms of Service</a>
-      <a href="privacy-policy" target="_blank">Privacy Policy</a>
+      <a href="terms-of-service" data-link target="_blank">Terms of Service</a>
+      <a href="privacy-policy" data-link target="_blank">Privacy Policy</a>
     </div>
   </div>
 </div>
