@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Параметры
-REPO_URL="git@github.com:ratkus91/mfisher.git"
+REPO_URL="https://github.com/ratkus91/mfisher.git"
 APP_DIR="/var/www/html/mfisher"
 
 # Шаги
