@@ -1,7 +1,8 @@
-name: Deploy to Server
+name: Deploy to Production
 
 on:
   push:
+
     branches:
       - main
 
@@ -29,7 +30,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: ./dist/
-          target: /var/www/html/your-project/
+          target: /var/www/html/mfisher/
 
       - name: Restart Apache
         run: |
