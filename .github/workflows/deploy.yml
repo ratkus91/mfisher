@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main # Укажите ветку, изменения в которой запускают деплой
+      [main] # Укажите ветку, изменения в которой запускают деплой
 
 jobs:
   deploy:
@@ -30,7 +30,7 @@ jobs:
 
       # 5. Загружаем файлы на сервер
       - name: Deploy to server
-        uses: appleboy/scp-action@v0.1.6
+        uses: appleboy/scp-action@v0.2.1
         with:
           host: ${{ secrets.SERVER_HOST }}      # IP или домен сервера
           username: ${{ secrets.SERVER_USER }}  # Пользователь на сервере
