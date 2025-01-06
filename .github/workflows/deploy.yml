@@ -1,38 +1,39 @@
-name: Deploy to Production
+name: Deploy to Server
 
 on:
   push:
-
     branches:
-      - main
+      - main # Укажите ветку, изменения в которой запускают деплой
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      # 1. Клонируем репозиторий
+      - name: Checkout code
         uses: actions/checkout@v3
-      - name: Set up Node.js
+
+      # 2. Устанавливаем Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18 # Укажите версию Node.js (рекомендуется 16+ для Vite)
 
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
+      # 3. Устанавливаем зависимости
+      - name: Install dependencies
+        run: npm install
 
+      # 4. Собираем проект
+      - name: Build project
+        run: npm run build
+
+      # 5. Загружаем файлы на сервер
       - name: Deploy to server
-        uses:  appleboy/ssh-action@v0.1.6
+        uses: appleboy/scp-action@v0.2.1
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          source: ./dist/
-          target: /var/www/html/mfisher/
-
-      - name: Restart Apache
-        run: |
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sudo
-          systemctl reload apache2"
+          host: ${{ secrets.SERVER_HOST }}      # IP или домен сервера
+          username: ${{ secrets.SERVER_USER }}  # Пользователь на сервере
+          key: ${{ secrets.SERVER_SSH_KEY }}        # Приватный SSH-ключ
+          source: ./dist                        # Папка для загрузки
+          target: /var/www/html/mfisher/   # Путь на сервере
