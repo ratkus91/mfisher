@@ -2,7 +2,7 @@
 
 # Параметры
 REPO_URL="https://github.com/ratkus91/mfisher.git"
-APP_DIR="/var/www/html/mfisher"
+APP_DIR="/mfisher"
 
 # Шаги
 echo "Обновляем репозиторий..."
@@ -12,7 +12,7 @@ else
     cd $APP_DIR
     git reset --hard
     git pull origin main
-fi
+
 
 echo "Устанавливаем зависимости..."
 cd $APP_DIR
