@@ -21,5 +21,9 @@ npm install
 echo "Собираем проект..."
 npm run build
 
+cd dist
+
+echo 'mfisher.agency' > CNAME
+
 echo "Запускаем сервер..."
 pm2 start dist --name "mfisher" --no-daemon
