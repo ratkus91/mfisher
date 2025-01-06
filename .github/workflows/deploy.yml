@@ -30,7 +30,7 @@ jobs:
 
       # 5. Загружаем файлы на сервер
       - name: Deploy to server
-        uses: appleboy/scp-action@v0.2.1
+        uses: appleboy/scp-action@v0.1.6
         with:
           host: ${{ secrets.SERVER_HOST }}      # IP или домен сервера
           username: ${{ secrets.SERVER_USER }}  # Пользователь на сервере
