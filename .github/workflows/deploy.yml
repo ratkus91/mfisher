@@ -29,14 +29,6 @@ jobs:
         run: npm run build
 
           # 5. Загружаем файлы на сервер
-      - name: Deploy to server
-        uses: appleboy/scp-action@v0.1.6
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          source: ./dist
-          target: /var/www/html/mfisher/
-          port: 22
-          timeout: 30s
-          debug: true
+      - name: Deploy using rsync
+        run: |
+          rsync -avz -e "ssh -i ${{ secrets.SERVER_SSH_KEY }}" ./dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/html/mfisher/
