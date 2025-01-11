@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/var/www/mfisher.agency/dist/",
+    "build": "vite build --base=./",
     "preview": "vite preview",
     "watch": "npx vite build --watch"
   },

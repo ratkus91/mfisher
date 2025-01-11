@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
   return {
     root: "./src",
     build: {
-      outDir: "../dist",
+      outDir: "dist",
       emptyOutDir: true,
       sourcemap: true,
       rollupOptions: {
