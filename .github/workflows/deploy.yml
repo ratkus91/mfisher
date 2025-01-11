@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: dist/*
-          target: /var/www/html/mfisher/
+          target: /var/www/mfisher/
           port: 22
           timeout: 30s
           debug: true
