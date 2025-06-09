@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
-    "glob": "^7.2.3",
+    "glob": "^9.2.3",
     "postcss": "^8.4.25",
     "postcss-sort-media-queries": "^5.2.0",
     "sass": "^1.57.1",
