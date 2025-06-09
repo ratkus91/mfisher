@@ -299,6 +299,7 @@
                   current += increment;
                   if (current >= target) {
                     num.textContent = target;
+                    console.log(target.type.off())
                     return;
                   }
                   num.textContent = Math.round(current);

@@ -5,20 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=./",
+    "build": "vite build --base=/",
     "preview": "vite preview",
     "watch": "npx vite build --watch"
   },
   "browserslist": [
     "cover 99.5%"
   ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "glob": "^7.2.3",
-    "imagemin": "^8.0.1",
-    "imagemin-mozjpeg": "^10.0.0",
-    "imagemin-webp": "^8.0.0",
-    "postcss": "^8.4.16",
+    "postcss": "^8.4.25",
     "postcss-sort-media-queries": "^5.2.0",
     "sass": "^1.57.1",
     "sharp": "^0.33.5",
@@ -37,8 +37,6 @@
     "express": "^4.21.2",
     "intl-tel-input": "^24.8.2",
     "jquery": "^3.7.1",
-    "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.16",
     "normalize.css": "^8.0.1",
     "swiper": "^11.1.14"
   }

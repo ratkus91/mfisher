@@ -7,6 +7,7 @@ import autoprefixer from "autoprefixer";
 import postcssSortMediaQueries from "postcss-sort-media-queries";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import path from "path";
+import fs from "fs";
 
 export default defineConfig(({ command }) => {
   return {
@@ -53,8 +54,8 @@ export default defineConfig(({ command }) => {
     plugins: [
       injectHTML({
         injectData: {
-          header: path.resolve(__dirname, "src/components/header.html"),
-          footer: path.resolve(__dirname, "src/components/footer.html"),
+          header: fs.readFileSync(path.resolve(__dirname, "src/components/header.html"), "utf8"),
+          footer: fs.readFileSync(path.resolve(__dirname, "src/components/footer.html"), "utf8"),
         },
       }),
       viteStaticCopy({
